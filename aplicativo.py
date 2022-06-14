@@ -17,9 +17,10 @@ arvore = pickle.load(arquivo)
 individuo = []
 
 st.text_input('Digite o sexo do paciente (masculino/feminino)',key='sexo')
-st.text_input('Qual a idade do paciente?',key='idade')
+st.number_input('Qual a idade do paciente?',key='idade')
 st.text_input('O paciente está hospitalizado? (s/n)',key='hospitalizado')
 st.text_input('O paciente tem febre? (s/n)',key='febre')
+st.text_input("O indivíduo tem tosse? sim | nao:",key='tosse')
 
 if st.session_state.sexo.lower() == 'masculino':
     individuo.append(0)
@@ -74,7 +75,7 @@ if st.session_state.febre == 's':
 else:
     individuo.append(1)
     
-st.text_input("O indivíduo tem tosse? sim | nao:",key='tosse')
+
 if st.session_state.tosse == 'n':
     individuo.append(0)
 else:
