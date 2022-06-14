@@ -17,12 +17,16 @@ arvore = pickle.load(arquivo)
 individuo = []
 
 st.text_input('Digite o sexo do paciente (masculino/feminino)',key='sexo')
+st.text_input('Qual a idade do paciente?',key='idade')
+st.text_input('O paciente está hospitalizado? (s/n)',key='hospitalizado')
+st.text_input('O paciente tem febre? (s/n)',key='febre')
+
 if st.session_state.sexo.lower() == 'masculino':
     individuo.append(0)
 else:
     individuo.append(1)
     
-st.text_input('Qual a idade do paciente?',key='idade')
+
 idade = int(st.session_state.idade)
 if 59<idade<70:
     individuo.append(0)
@@ -58,13 +62,13 @@ else:
                                     individuo.append(10)
                                   else:
                                         individuo.append(11)
-st.text_input('O paciente está hospitalizado? (s/n)',key='hospitalizado')
+
 if st.session_state.hospitalizado.lower()=='s':
     individuo.append(0)
 else:
     individuo.append(1)
     
-st.text_input('O paciente tem febre? (s/n)',key='febre')
+
 if st.session_state.febre == 's':
     individuo.append(0)
 else:
